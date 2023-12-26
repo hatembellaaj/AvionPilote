@@ -14,10 +14,12 @@ create table VOL(
     numvol TEXT PRIMARY KEY, 
     depart TEXT, 
     arrivee TEXT, 
-    numav TEXT FOREIGN KEY (numavion) REFERENCES AVION, 
-    numpil TEXT FOREIGN KEY (numpilote) REFERENCES PILOTE, 
+    numav TEXT NOT NULL, 
+    numpil TEXT NOT NULL REFERENCES PILOTE, 
     jdep date, 
     hdep time, 
     jarr date, 
-    harr time
+    harr time,
+	FOREIGN KEY (numav) REFERENCES AVION
 );
+
